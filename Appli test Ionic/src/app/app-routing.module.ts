@@ -8,6 +8,10 @@ const routes: Routes = [
   },  {
     path: 'settings',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'spirit',
+    loadChildren: () => import('./spirit/spirit.module').then( m => m.SpiritPageModule)
   }
 
 ];
