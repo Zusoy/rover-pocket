@@ -14,11 +14,7 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },  {
-    path: 'spirit',
-    loadChildren: () => import('./spirit/spirit.module').then( m => m.SpiritPageModule)
   }
-
 ];
 
 @NgModule({
