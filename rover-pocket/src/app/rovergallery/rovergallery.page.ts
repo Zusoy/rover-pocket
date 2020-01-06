@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-rovergallery',
+  templateUrl: './rovergallery.page.html',
+  styleUrls: ['./rovergallery.page.scss'],
 })
-export class HomePage {
+
+
+export class RovergalleryPage {
   constructor(public http: HttpClient,public loadingController: LoadingController) {
     this.getRoverDataList()
   }
@@ -15,7 +17,7 @@ export class HomePage {
   async getRoverDataList()
   {
     this.http.get(
-      'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=Xir2W2pGbpExcRdf95vtHb99iE6BQgpm7XA33mnx')
+      'https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=1000&camera=navcam&api_key=Xir2W2pGbpExcRdf95vtHb99iE6BQgpm7XA33mnx')
       .subscribe(data=>{
         this.roverdataList=data["photos"]
       })

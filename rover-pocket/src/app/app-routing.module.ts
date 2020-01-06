@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  },  {
+    path: 'rovergallery',
+    loadChildren: () => import('./rovergallery/rovergallery.module').then( m => m.RovergalleryPageModule)
   }
+
 ];
 
 @NgModule({

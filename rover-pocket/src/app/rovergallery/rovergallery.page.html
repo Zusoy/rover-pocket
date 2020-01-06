@@ -15,7 +15,10 @@
     <ion-item *ngFor="let roverdata of roverdataList;let i=index">
       <ion-label>
         <h3>{{roverdata.rover.name}} {{roverdata.earth_date}}</h3>
+        <ion-label>
         <img [src]="roverdata.img_src">
+        {{roverdata.earth_date}}
+        </ion-label>
       </ion-label>
     </ion-item>
   </ion-list>
