@@ -1,0 +1,95 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+
+
+.Ham {
+  position: relative;
+  margin: 8px 0;
+  display : flex;
+  width: 35px;
+  height: 5px;
+  left: 2.5%;
+  right: 12.5%;
+  top: 20.92%;
+  bottom: 22.92%;
+
+  background: #BF4539;
+}
+
+.my-custom-menu {
+  --width: 500px;
+}
+
+
+.fond-content
+{
+  --background:#070E26;
+}
+
+.fond-header{
+  --background:#070E26;
+}
+
+.mars
+{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  margin:200px auto;
+  top:0px;bottom:0px;left:0px;right:0px;
+
+
+
+  background: linear-gradient(180deg, #F27A5E 0%, #BF4539 100%);
+}
+
+.header-md:after
+{
+  background-image: none;
+
+}
+
+.Rover {
+
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin:200px auto;
+  top:-200px;bottom:0px;left:0px;right:0px;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 72px;
+
+
+  color: #FFFFFF;
+
+  text-shadow: 0px -3px 5px #000000;
+}
+
+.Pocket {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  margin:200px auto;
+  top:-150px;bottom:0px;left:150px;right:0px;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 72px;
+
+
+  color: #FFFFFF;
+
+  text-shadow: 0px -3px 5px #000000;
+}
+
+
