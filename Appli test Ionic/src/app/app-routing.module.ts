@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'spirit',
     loadChildren: () => import('./spirit/spirit.module').then( m => m.SpiritPageModule)
+  },
+  {
+    path: 'a-propos',
+    loadChildren: () => import('./a-propos/a-propos.module').then( m => m.AProposPageModule)
   }
 
 ];
