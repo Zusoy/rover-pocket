@@ -2,9 +2,6 @@
   max-height: 35vh;
   overflow: hidden;
 }
-
-
-
 .Ham {
   position: relative;
   margin: 8px 0;
@@ -15,14 +12,11 @@
   right: 12.5%;
   top: 20.92%;
   bottom: 22.92%;
-
   background: #BF4539;
 }
-
 .my-custom-menu {
   --width: 500px;
 }
-
 
 .fond-content
 {
@@ -54,7 +48,6 @@
 }
 
 .Rover {
-
   position: absolute;
   width: 250px;
   height: 250px;
@@ -92,4 +85,11 @@
   text-shadow: 0px -3px 5px #000000;
 }
 
+.etoiles{
+	position: fixed; 
+ 	top: 0; 
+	left: 0; 
+ 	min-width: 100%;
+ 	min-height: 100%;
+}
 
