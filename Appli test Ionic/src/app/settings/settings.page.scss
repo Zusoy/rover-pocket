@@ -1,43 +1,40 @@
-ion-title{
-    z-index: 3;
+ion-title {
     text-align: center;
 }
 
-ion-content{
-margin-left:40px;
+ion-content {
+    margin-left:40px;
 }
 
-ion-input{
-border: 1px solid;
-border-radius:8px;
+ion-input {
+    border: 1px solid;
+    border-radius:8px;
 }
 
 .list-avatar {
-display:flex;
-flex-direction:row;
-justify-content:space-around;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 }
 
 .list-drapeau {
-display:flex;
-flex-direction:row;
-justify-content:space-around;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 }
 
 .list-profil {
-	
-display:flex;
-flex-direction:row;
-justify-content:space-around;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 }
 
-.profil{
+.profil {
 	width: 40px;
     height: 40px;
     border-radius: 20px;
 	border: 1px solid;
 }
-
 
 
 .drapeau{
@@ -53,4 +50,14 @@ justify-content:space-around;
 
 #suppr{
 	text-align: center;
+}
+
+ion-tab-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 2vh;
 }

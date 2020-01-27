@@ -1,15 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Paramètre</ion-title>
+    <ion-title>Param&egrave;tre</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-title>Profil</ion-title>
+    Notifications
+    <ion-list>
+        <ion-item>
+          <ion-label>Spirit</ion-label>
+          <ion-toggle [(ngModel)]="spirit"></ion-toggle>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Curiosity</ion-label>
+          <ion-toggle [(ngModel)]="curiosity"></ion-toggle>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Opportunity</ion-label>
+          <ion-toggle [(ngModel)]="opportunity"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    <br>
+    Performance
+    <ion-list>
+        <ion-item>
+            <ion-label>Animations</ion-label>
+            <ion-toggle [(ngModel)]="animations"></ion-toggle>
+        </ion-item>
+    </ion-list>
+    
   <h2>Entrer un pseudonyme</h2>
   <ion-input></ion-input>
-  <h2>Sélectionner un profil</h2>
+  <h2>S&eacute;lectionner un profil</h2>
   
  <ion-list class="list-avatar">
   <ion-avatar>
@@ -41,19 +65,11 @@
     </ion-list>
 
 
-  <h2>Sélectionner une langue</h2>
+  <h2>S&eacute;lectionner une langue</h2>
 <ion-list class="list-drapeau">
  <img class=drapeau src="../../assets/francais.png" alt="image">
  <img class=drapeau src="../../assets/anglais.png" alt="image">
 </ion-list>
-   <h2>Selectionner une couleur de profil</h2>
-<ion-list class="list-profil">
-<div class="profil" style="background:yellow"></div>
-<div class="profil" style="background:green"></div>
-<div class="profil" style="background:red"></div>
-<div class="profil" style="background:cyan"></div>
-<div class="profil" style="background:blue"></div>
-</ion-list>
-   <ion-tab-button id="cgu" tab="cgu">Conditions générale d’utilisation</ion-tab-button>
+   <ion-tab-button id="cgu" tab="cgu">Conditions g&eacute;n&eacute;rale d&apos;utilisation</ion-tab-button>
    <ion-tab-button id="suppr">Supprimer le compte</ion-tab-button>
 </ion-content>
