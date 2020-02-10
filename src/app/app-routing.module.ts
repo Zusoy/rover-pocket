@@ -29,6 +29,18 @@ const routes: Routes = [
   {
     path: 'mdpperdu',
     loadChildren: () => import('./mdpperdu/mdpperdu.module').then( m => m.MdpperduPageModule)
+  },
+  {
+    path: 'opportunity',
+    loadChildren: () => import('./opportunity/opportunity.module').then( m => m.OpportunityPageModule)
+  },
+  {
+    path: 'curiosity',
+    loadChildren: () => import('./curiosity/curiosity.module').then( m => m.CuriosityPageModule)
+  },
+  {
+    path: 'favoris',
+    loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
   }
 
 
