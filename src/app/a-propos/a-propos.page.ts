@@ -11,5 +11,4 @@ export class AProposPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
