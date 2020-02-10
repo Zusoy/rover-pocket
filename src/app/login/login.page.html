@@ -1,20 +1,19 @@
 <ion-content class="content">
-    <img class=etoiles src="../../assets/etoiles.svg" alt="image">
   Version beta 0.2.0
   <div class="padding">
     
     <div class="logo">
-      <!-- <ion-icon color="light" name="sunny"></ion-icon> -->
+       <ion-icon color="light" name="sunny"></ion-icon>
     </div>
 
     <div *ngIf="!connected">
     <ion-item >
-      <ion-label color="light">Email</ion-label>
+      <ion-label color="light">Email :</ion-label>
       <ion-input color="light" type="mail" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="light">Mot de passe</ion-label>
+      <ion-label color="light">Mot de passe :</ion-label>
       <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
     </ion-item>
 
@@ -46,27 +45,28 @@
 <div *ngIf="connected">
     <!-- afficher si l'utilisateur est bien connect -->
     <ion-item>
-      <ion-label>
+      <ion-label color="light">
         <p>M&eacute;thode de connexion</p>
         <h2><b>email & {{ method }}</b></h2>
       </ion-label>
     </ion-item>
     
     <ion-item>
-      <ion-label>
+      <ion-label color="light">
         <p>Identifiant</p>
         <h2><b>{{ userId }}</b></h2>
       </ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label>
+      <ion-label color="light">
         <p>Adresse email</p>
         <h2><b>{{ mail }}</b></h2>
       </ion-label>
     </ion-item>
 
+    <ion-button expand="block" color="primary" href="carte">Lancer RovertPocket</ion-button>
     <ion-button expand="block" color="danger" (click)="logout()">DECONNEXION</ion-button>
-    <ion-button expand="block" color="primary" href="carte">Lancer CoincoinInsolite</ion-button>
+    
   </div>
 </ion-content>
