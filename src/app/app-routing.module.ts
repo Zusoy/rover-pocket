@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'a-propos',
     loadChildren: () => import('./a-propos/a-propos.module').then( m => m.AProposPageModule)
-  },  {
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'mdpperdu',
     loadChildren: () => import('./mdpperdu/mdpperdu.module').then( m => m.MdpperduPageModule)
+  },
+  {
+    path: 'feeds',
+    loadChildren: () => import('./feeds/feeds.module').then( m => m.FeedsPageModule)
   }
 
 
