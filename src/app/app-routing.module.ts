@@ -18,7 +18,19 @@ const routes: Routes = [
   {
     path: 'a-propos',
     loadChildren: () => import('./a-propos/a-propos.module').then( m => m.AProposPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'mdpperdu',
+    loadChildren: () => import('./mdpperdu/mdpperdu.module').then( m => m.MdpperduPageModule)
   }
+
 
 ];
 @NgModule({

@@ -1,0 +1,45 @@
+<ion-content class="content">
+  <div class="padding">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="login"></ion-back-button>
+      </ion-buttons>
+    <br><br><br><br>
+    <ion-item >
+      <ion-label color="light">Pseudo*</ion-label>
+      <ion-input color="light" type="text" placeholder="Pseudonyme" ></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light">Email*</ion-label>
+      <ion-input color="light" type="mail" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light">Mot de passe*</ion-label>
+      <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light">Confirmer Mot de passe*</ion-label>
+      <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button color="tertiary" expand="block" shape="round" (click)="signUp()">Valider Inscription</ion-button>
+    <br><br>
+    <ion-item lines="none">
+      <ion-label color="light" class="ion-text-center">Ou inscrivez-vous avec</ion-label>
+    </ion-item>
+    
+    <div class="flex">
+      <ion-button color="facebook" shape="round">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Facebook
+      </ion-button>
+      <ion-button color="google" shape="round">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
