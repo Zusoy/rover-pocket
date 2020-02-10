@@ -18,12 +18,12 @@
     </ion-item>
 
     <ion-item lines="none">
-      <ion-button color="light" slot="end" fill="clear" href="mdpperdu">Mot de passe oublié ?</ion-button>
+      <ion-button color="light" slot="end" fill="clear" [routerLink]="['../mdpperdu']">Mot de passe oublié ?</ion-button>
     </ion-item>
 
     <ion-button color="light" expand="block" shape="round" fill="outline" (click)="login()">Connexion</ion-button>
     <br>
-    <ion-button color="tertiary" expand="block" shape="round" href="inscription" >Inscription</ion-button>
+    <ion-button color="tertiary" expand="block" shape="round" [routerLink]="['../inscription']" >Inscription</ion-button>
 
     <ion-item lines="none">
       <ion-label color="light" class="ion-text-center">Ou connectez-vous avec</ion-label>
