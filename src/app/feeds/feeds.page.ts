@@ -6,11 +6,9 @@ import { IonInfiniteScroll } from '@ionic/angular';
   templateUrl: './feeds.page.html',
   styleUrls: ['./feeds.page.scss'],
 })
-export class FeedsPage implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
-
+export class FeedsPage {
+  
+  
   @ViewChild(IonInfiniteScroll,{static: false}) infiniteScroll: IonInfiniteScroll;
  
  
