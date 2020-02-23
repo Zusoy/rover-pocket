@@ -5,43 +5,43 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
     path: 'spirit',
-    loadChildren: () => import('./spirit/spirit.module').then( m => m.SpiritPageModule)
+    loadChildren: () => import('./pages/spirit/spirit.module').then( m => m.SpiritPageModule)
   },
   {
     path: 'a-propos',
-    loadChildren: () => import('./a-propos/a-propos.module').then( m => m.AProposPageModule)
+    loadChildren: () => import('./pages/a-propos/a-propos.module').then( m => m.AProposPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'inscription',
-    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+    loadChildren: () => import('./pages/inscription/inscription.module').then( m => m.InscriptionPageModule)
   },
   {
     path: 'mdpperdu',
-    loadChildren: () => import('./mdpperdu/mdpperdu.module').then( m => m.MdpperduPageModule)
+    loadChildren: () => import('./pages/mdpperdu/mdpperdu.module').then( m => m.MdpperduPageModule)
   },
   {
     path: 'opportunity',
-    loadChildren: () => import('./opportunity/opportunity.module').then( m => m.OpportunityPageModule)
+    loadChildren: () => import('./pages/opportunity/opportunity.module').then( m => m.OpportunityPageModule)
   },
   {
     path: 'curiosity',
-    loadChildren: () => import('./curiosity/curiosity.module').then( m => m.CuriosityPageModule)
+    loadChildren: () => import('./pages/curiosity/curiosity.module').then( m => m.CuriosityPageModule)
   },
   {
     path: 'favoris',
-    loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
+    loadChildren: () => import('./pages/favoris/favoris.module').then( m => m.FavorisPageModule)
   }
 
 
