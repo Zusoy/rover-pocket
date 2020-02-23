@@ -20,6 +20,7 @@ export class LoginPage {
       password: ''
     };
   connected: boolean;
+  isAnonymous: boolean;
   userId: string;
   mail: string;
   method: any;
@@ -35,14 +36,18 @@ export class LoginPage {
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connect&eacute;');
+        console.log('non connecté;');
         this.connected = false;
       } else {
-        console.log('connect&eacute;: ' + auth.uid);
+        console.log('connecté: ' + auth.uid);
         this.connected = true;
         this.userId = auth.uid;
-        this.mail = auth.email;
-        this.method = auth.providerData[0].providerId;
+        if (auth.isAnonymous) {
+          this.mail = 'anonyme@anonyme.anonyme';
+          this.method = 'anonyme';
+         } else {
+          this.mail = auth.email;
+          this.method = auth.providerData[0].providerId; }
       }
     });
   }
@@ -70,6 +75,7 @@ export class LoginPage {
     });
   }
 
+
   async loginError() {
     const toast = await this.toastController.create({
       message: 'Adresse email ou mot de passe incorrect.',
@@ -87,6 +93,17 @@ export class LoginPage {
     });
     toast.present();
   }
+
+/* --- --- CONNECTION ANONYME --- --- */
+ anonymeLogin() {
+  this.afAuth.auth.signInAnonymously().then(() => {
+      console.log('Connexion r&eacute;ussie');
+      this.loginSuccess();
+    }).catch(err => {
+      this.loginError();
+      console.log('Erreur: ' + err);
+    });
+}
 
 /* --- --- CONNECTION FACEBOOK --- --- */
 

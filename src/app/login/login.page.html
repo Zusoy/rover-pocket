@@ -46,6 +46,12 @@
         Google
       </ion-button>
     </div>
+     <div class="flex">
+      <ion-button color="anonyme" shape="round" (click)="anonymeLogin()">
+        <ion-icon slot="start" name="person"></ion-icon>
+        Anonyme
+      </ion-button>
+    </div>
   </div>
 </div>
 
@@ -54,7 +60,7 @@
     <ion-item>
       <ion-label color="light">
         <p>M&eacute;thode de connexion</p>
-        <h2><b>email & {{ method }}</b></h2>
+        <h2><b>{{ method }}</b></h2>
       </ion-label>
     </ion-item>
     
