@@ -15,17 +15,17 @@
     <ion-list>
         <ion-item>
           <ion-label>Spirit</ion-label>
-          <ion-toggle [(ngModel)]="spirit"></ion-toggle>
+          <ion-toggle></ion-toggle>
         </ion-item>
       
         <ion-item>
           <ion-label>Curiosity</ion-label>
-          <ion-toggle [(ngModel)]="curiosity"></ion-toggle>
+          <ion-toggle></ion-toggle>
         </ion-item>
       
         <ion-item>
           <ion-label>Opportunity</ion-label>
-          <ion-toggle [(ngModel)]="opportunity"></ion-toggle>
+          <ion-toggle></ion-toggle>
         </ion-item>
       </ion-list>
     <br>
@@ -33,49 +33,63 @@
     <ion-list>
         <ion-item>
             <ion-label>Animations</ion-label>
-            <ion-toggle [(ngModel)]="animations"></ion-toggle>
+            <ion-toggle></ion-toggle>
         </ion-item>
     </ion-list>
     
   <h2>Entrer un pseudonyme</h2>
-  <ion-input></ion-input>
+  <ion-input placeholder="Nouveau pseudonyme"></ion-input>
+    <h2>Changer de Mot de passe</h2>
+  <ion-input type="password" placeholder="Mot de passe actuel"></ion-input>
+  <br>
+  <ion-input type="password" placeholder="Nouveau Mot de passe"></ion-input>
+
   <h2>S&eacute;lectionner un profil</h2>
   
- <ion-list class="list-avatar">
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-    </ion-list>
-<ion-list class="list-avatar">
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-  <ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-avatar>
-    </ion-list>
+  <ion-list class="list-avatar">
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+      </ion-list>
+  <ion-list class="list-avatar">
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+      </ion-list>
 
 
   <h2>S&eacute;lectionner une langue</h2>
-<ion-list class="list-drapeau">
- <img class=drapeau src="../../assets/francais.png" alt="image">
- <img class=drapeau src="../../assets/anglais.png" alt="image">
-</ion-list>
-   <ion-tab-button id="cgu" tab="cgu" [routerLink]="['../a-propos']">Conditions g&eacute;n&eacute;rale d&apos;utilisation</ion-tab-button>
-   <ion-tab-button id="suppr">Supprimer le compte</ion-tab-button>
+  <ion-list class="list-drapeau">
+    <img class="drapeau" src="../../assets/francais.png" alt="image">
+    <img class="drapeau" src="../../assets/anglais.png" alt="image">
+  </ion-list>
+  <p>
+    <ion-button color="dark" expand="block" id="cgu" tab="cgu" fill="outline" [routerLink]="['../a-propos']">
+      Conditions g&eacute;n&eacute;rale d&apos;utilisation
+    </ion-button>
+  </p>
+  <p>
+    <ion-button color="success" expand="block" shape="round" >Enregistrer les modifications</ion-button>
+  </p>
+  <p id="suppr" >
+    <ion-button (click)="presentAlert()" color="danger" fill="outline" >Supprimer le compte</ion-button>
+  </p>
 </ion-content>
