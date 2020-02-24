@@ -32,7 +32,7 @@ export class LoginPage {
     public toastController: ToastController,
     public afAuth: AngularFireAuth,
     private fb: Facebook,
-    private googlePlus: GooglePlus,
+    /*private googlePlus: GooglePlus,*/
     public platform: Platform
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
@@ -159,13 +159,13 @@ googleLogin() {
   }
 
   googleCordova() {
-   this.googlePlus
+   /*this.googlePlus
    .login({}).then(res => console.log(res))
    .then((success) => {
               console.log('Info Google: ' + JSON.stringify(success));
           }).catch((error) => {
               console.log('Erreur: ' + JSON.stringify(error));
-          });
+          });*/
       }
 
   googleWeb() {
