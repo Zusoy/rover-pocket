@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -31,6 +32,7 @@ export class LoginPage {
     public toastController: ToastController,
     public afAuth: AngularFireAuth,
     private fb: Facebook,
+    private googlePlus: GooglePlus,
     public platform: Platform
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
@@ -145,10 +147,32 @@ export class LoginPage {
   }
 
 /* --- --- CONNECTION GOOGLE --- --- */
-  googleLogin() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-    .then((success) => {
-        console.log('Info Facebook: ' + JSON.stringify(success));
+
+googleLogin() {
+    if (this.platform.is('cordova')) {
+        console.log('PLateforme cordova');
+        this.googleCordova();
+      } else {
+        console.log('PLateforme Web');
+        this.googleWeb();
+      }
+  }
+
+  googleCordova() {
+   this.googlePlus
+   .login({}).then(res => console.log(res))
+   .then((success) => {
+              console.log('Info Google: ' + JSON.stringify(success));
+          }).catch((error) => {
+              console.log('Erreur: ' + JSON.stringify(error));
+          });
+      }
+
+  googleWeb() {
+      this.afAuth.auth
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((success) => {
+        console.log('Info Google: ' + JSON.stringify(success));
       }).catch((error) => {
         console.log('Erreur: ' + JSON.stringify(error));
       });
