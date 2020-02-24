@@ -27,6 +27,7 @@ export const firebaseConfig = {
 };
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,7 +41,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
      AngularFireAuthModule,
      AngularFireStorageModule],
   providers: [
-
+    /*GooglePlus,*/
     Facebook,
     StatusBar,
     SplashScreen,
