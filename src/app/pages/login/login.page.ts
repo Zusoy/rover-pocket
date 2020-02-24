@@ -14,6 +14,7 @@ import { Platform } from '@ionic/angular';
 export class LoginPage {
 
   providerFb: firebase.auth.FacebookAuthProvider;
+  providerGg: firebase.auth.GoogleAuthProvider;
 
   dataUser = {
       email: '',
@@ -33,6 +34,7 @@ export class LoginPage {
     public platform: Platform
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
+    this.providerGg = new firebase.auth.GoogleAuthProvider();
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -136,6 +138,16 @@ export class LoginPage {
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then((success) => {
+        console.log('Info Facebook: ' + JSON.stringify(success));
+      }).catch((error) => {
+        console.log('Erreur: ' + JSON.stringify(error));
+      });
+  }
+
+/* --- --- CONNECTION GOOGLE --- --- */
+  googleLogin() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .then((success) => {
         console.log('Info Facebook: ' + JSON.stringify(success));
       }).catch((error) => {
         console.log('Erreur: ' + JSON.stringify(error));
