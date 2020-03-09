@@ -47,7 +47,6 @@
  
 }
 
-
 #lol{
 
     --ion-background-color:linear-gradient(180deg,  #ED765B 0%, #ED765B 100%);;
@@ -60,3 +59,12 @@
         margin: 20px auto;
         background:white;
     }
+
+ion-toolbar {
+  --background: #070e26;
+  --ion-color-base: #070e26 !important;
+}
+
+ion-menu-button {
+  color: white;
+}
