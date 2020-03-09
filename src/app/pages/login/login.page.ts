@@ -6,13 +6,19 @@ import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from '@ionic/angular';
+import {  MenuController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage {
+
+
 
   providerFb: firebase.auth.FacebookAuthProvider;
   providerGg: firebase.auth.GoogleAuthProvider;
@@ -33,7 +39,8 @@ export class LoginPage {
     public afAuth: AngularFireAuth,
     private fb: Facebook,
     /*private googlePlus: GooglePlus,*/
-    public platform: Platform
+    public platform: Platform,
+    public menuCtrl: MenuController
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
     this.providerGg = new firebase.auth.GoogleAuthProvider();
@@ -183,5 +190,10 @@ googleLogin() {
   logout() {
     this.afAuth.auth.signOut();
   }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+   }
+  
 }
 

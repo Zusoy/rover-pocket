@@ -1,3 +1,4 @@
+import {  MenuController } from '@ionic/angular';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( public menuCtrl: MenuController){}
+  
+  ionViewWillEnter() {
+   this.menuCtrl.enable(false);
+  }
 
+  
 }
