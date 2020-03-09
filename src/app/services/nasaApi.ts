@@ -1,13 +1,7 @@
 import {Injectable} from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-/**
-* NASA API Service
-* 
-* @since    0.0.1
-* @category Service
-* @author   Zusoy
-*/
+
 @Injectable({
     providedIn: 'root'
 })

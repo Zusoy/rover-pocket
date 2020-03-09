@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { RoverService } from '../services/rover.service';
 
 @Component({
   selector: 'app-feeds',
@@ -13,12 +14,9 @@ export class FeedsPage {
 
   dataList:any;
 
-  constructor() {
+  constructor(private rover_service: RoverService) {
     this.dataList = [];
-
-    for (let i = 0; i < 25; i++) {
-      this.dataList.push("Item number "+this.dataList.length);
-    }
+    this.getRoverData();
   }
 
 
@@ -27,9 +25,7 @@ export class FeedsPage {
 
     setTimeout(() => {
       console.log('Done');
-      for (let i = 0; i < 25; i++) {
-        this.dataList.push("Item number "+this.dataList.length);
-      }
+      this.getRoverData();
       event.target.complete();
 
       // App logic to determine if all data is loaded
@@ -42,5 +38,15 @@ export class FeedsPage {
 
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+  }
+
+  getRoverData() {
+    let rover_name = "opportunity";
+    let camera = "navcam";
+    let page = "1";
+    let sol = "1000";
+    for (let i = 0; i < 25; i++) {
+      this.dataList.push(this.rover_service.requestRover(rover_name, camera, page, sol));
+    }
   }
 }

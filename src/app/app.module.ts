@@ -27,6 +27,7 @@ export const firebaseConfig = {
 };
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +39,9 @@ import { Facebook } from '@ionic-native/facebook/ngx';
      AngularFireModule.initializeApp(firebaseConfig),
      AngularFireDatabaseModule,
      AngularFireAuthModule,
-     AngularFireStorageModule],
+     AngularFireStorageModule,
+     HttpClientModule,
+    ],
   providers: [
 
     Facebook,
