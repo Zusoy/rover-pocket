@@ -12,12 +12,12 @@ export class MdpperduPage implements OnInit {
 
     dataUser = {
         email: '',
-      };
+    };
 
     constructor(
         private afAuth: AngularFireAuth,
         public toastController: ToastController,
-        ) { }
+    ) { }
 
   ngOnInit() {
   }

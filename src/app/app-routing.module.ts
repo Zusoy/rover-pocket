@@ -46,10 +46,6 @@ const routes: Routes = [
   },
   { 
     path: 'userMgmt', component: UserManagementComponent 
-  },
-  {
-    path: 'feeds',
-    loadChildren: () => import('./pages/feeds/feeds.module').then( m => m.FeedsPageModule)
   }
 ];
 @NgModule({
