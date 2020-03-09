@@ -42,9 +42,12 @@ const routes: Routes = [
   {
     path: 'favoris',
     loadChildren: () => import('./pages/favoris/favoris.module').then( m => m.FavorisPageModule)
+  },
+
+  {
+    path: 'feeds',
+    loadChildren: () => import('./pages/feeds/feeds.module').then( m => m.FeedsPageModule)
   }
-
-
 ];
 @NgModule({
   imports: [
