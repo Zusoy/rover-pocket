@@ -8,10 +8,10 @@
 
     <ion-item >
       <ion-label color="light">Email* :</ion-label>
-      <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
+      <ion-input color="light" type="mail" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
     </ion-item>
 
     <br>
-    <ion-button color="tertiary" expand="block" shape="round">Envoyer la demande</ion-button>
+    <ion-button color="tertiary" expand="block" shape="round" (click)="resetPassword()">Envoyer la demande</ion-button>
   </div>
 </ion-content>

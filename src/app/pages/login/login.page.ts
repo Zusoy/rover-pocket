@@ -40,10 +40,10 @@ export class LoginPage {
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connecté;');
+        console.log('non connect&eacute;:');
         this.connected = false;
       } else {
-        console.log('connecté: ' + auth.uid);
+        console.log('connect&eacute;: ' + auth.uid);
         this.connected = true;
         this.userId = auth.uid;
         if (auth.isAnonymous) {
@@ -113,10 +113,10 @@ export class LoginPage {
 
   facebookLogin() {
       if (this.platform.is('cordova')) {
-        console.log('PLateforme cordova');
+        console.log('Plateforme cordova');
         this.facebookCordova();
       } else {
-        console.log('PLateforme Web');
+        console.log('Plateforme Web');
         this.facebookWeb();
       }
   }

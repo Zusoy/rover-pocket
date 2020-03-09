@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UserManagementComponent } from './components/user-management/user-management.component'; 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,7 +44,9 @@ const routes: Routes = [
     path: 'favoris',
     loadChildren: () => import('./pages/favoris/favoris.module').then( m => m.FavorisPageModule)
   },
-
+  { 
+    path: 'userMgmt', component: UserManagementComponent 
+  },
   {
     path: 'feeds',
     loadChildren: () => import('./pages/feeds/feeds.module').then( m => m.FeedsPageModule)
