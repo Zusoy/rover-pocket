@@ -68,3 +68,8 @@ ion-toolbar {
 ion-menu-button {
   color: white;
 }
+
+.header-md::after{
+  background-image: none;
+  display: none;
+}
