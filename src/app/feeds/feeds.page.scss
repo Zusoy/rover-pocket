@@ -1,19 +1,30 @@
+.fond-content
+{
+  --background:#070E26;
+}
+
+.fond-header
+{
+  --background:#070E26;
+}
+
 .mars
 {
   position: relative;
   width: 100%;
   margin: auto;
-  height:150px;
-  border-radius: 25% 25% 0 0;
+  height: 150px;
+  border-radius: 15% 15% 0 0;
   background: linear-gradient(180deg, #F27A5E 0%, #BF4539 100%);
 }
 
 .container{
-    position: relative;
-    top: 85%;
-    margin: auto;
-    width: 100%;
-    height: 350px;
+  position: relative;
+  top: 100%;
+  margin: auto;
+  width: 100%;
+  height: 350px;
+  transform: translateY(-34%);
 }
 
 .spirit{
@@ -25,20 +36,30 @@
     right: 0;
     bottom: 0;
     margin: 10px 0 10px 0;
+ 
+}
+
+.etoiles{
+	position: absolute;
+ 	top: 0;
+	left: 0;
+ 	min-width: 100%;
+ 	min-height: 100%;
 }
 
 #lol{
-    margin-top: 100%;
-    --ion-background-color:linear-gradient(180deg, #F27A5E 0%, #BF4539 100%);;
+
+    --ion-background-color:linear-gradient(180deg,  #BF4539 0%, #BF4539 100%);;
 }
 .item-content{
 
-background: linear-gradient(180deg, #F27A5E 0%, #BF4539 100%);
+    background: linear-gradient(180deg,  #BF4539 0%, #BF4539 100%);
 }
 
 .carre-blanc
     {
         width:400px;
         height:200px;
+        margin: 20px auto;
         background:white;
     }
