@@ -1,0 +1,34 @@
+.padding {
+    padding: 5%!important;
+}
+.logo ion-icon{
+    font-size: 9em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo img{
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo {
+    position: relative;
+    height: 250px;
+}
+ion-item {
+    --ion-background-color: transparent!important;
+}
+ion-content {
+    --ion-background-color: #070E26;
+}
+ion-back-button {
+    --color: #BF4539;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+}

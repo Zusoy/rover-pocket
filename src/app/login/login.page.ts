@@ -35,10 +35,10 @@ export class LoginPage {
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connecté');
+        console.log('non connect&eacute;');
         this.connected = false;
       } else {
-        console.log('connecté: ' + auth.uid);
+        console.log('connect&eacute;: ' + auth.uid);
         this.connected = true;
         this.userId = auth.uid;
         this.mail = auth.email;
@@ -58,7 +58,7 @@ export class LoginPage {
   login() {
     this.afAuth.auth.signInWithEmailAndPassword(this.dataUser.email, this.dataUser.password)
     .then(() => {
-      console.log('Connexion réussie');
+      console.log('Connexion r&eacute;ussie');
       this.loginSuccess();
       this.dataUser = {
         email: '',
@@ -81,7 +81,7 @@ export class LoginPage {
 
   async loginSuccess() {
     const toast = await this.toastController.create({
-      message: 'Vous êtes maintenant connecté.',
+      message: 'Vous &ecirc;tes maintenant connect&eacute;.',
       position: 'top',
       duration: 2000
     });

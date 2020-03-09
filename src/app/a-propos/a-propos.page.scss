@@ -11,6 +11,10 @@ ion-toolbar {
     border-bottom: none;
 }
 
+ion-back-button {
+    --color: #BF4539;
+}
+
 .header-md:after
 {
   background-image: none;
@@ -20,6 +24,7 @@ ion-toolbar {
     font-size: 14px;
     line-height: 21px;
     margin-top: 8vh;
+    padding: 0px 20px;
 }
 
 .cgu-title {

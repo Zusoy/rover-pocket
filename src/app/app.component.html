@@ -1,4 +1,38 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu content-id="menu" type="push">
+        <ion-header>
+            <ion-toolbar translucent>
+              <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+        <ion-list>
+            <ion-item [routerLink]="['../tab1']">
+                <ion-icon name="home" slot="start"></ion-icon>
+                <ion-label>Accueil</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['../spirit']">
+                <ion-icon name="person" slot="start"></ion-icon>
+                <ion-label>Spirit</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['../curiosity']">
+                <ion-icon name="chatbubbles" slot="start"></ion-icon>
+                <ion-label>Curiosity</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['../opportunity']">
+                <ion-icon name="settings" slot="start"></ion-icon>
+                <ion-label>Opportunity</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['../favoris']">
+                <ion-icon name="settings" slot="start"></ion-icon>
+                <ion-label>Favoris</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['../settings']">
+                <ion-icon name="settings" slot="start"></ion-icon>
+                <ion-label>Param&egrave;tres</ion-label>
+            </ion-item>
+        </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu"></ion-router-outlet>
 </ion-app>
-

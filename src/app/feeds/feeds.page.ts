@@ -6,35 +6,32 @@ import { IonInfiniteScroll } from '@ionic/angular';
   templateUrl: './feeds.page.html',
   styleUrls: ['./feeds.page.scss'],
 })
-export class FeedsPage implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+export class FeedsPage {
+
 
   @ViewChild(IonInfiniteScroll,{static: false}) infiniteScroll: IonInfiniteScroll;
- 
- 
+
   dataList:any;
- 
+
   constructor() {
     this.dataList = [];
-    
-    for (let i = 0; i < 25; i++) { 
+
+    for (let i = 0; i < 25; i++) {
       this.dataList.push("Item number "+this.dataList.length);
     }
   }
- 
- 
- 
+
+
+
   loadData(event) {
-    
+
     setTimeout(() => {
       console.log('Done');
-      for (let i = 0; i < 25; i++) { 
+      for (let i = 0; i < 25; i++) {
         this.dataList.push("Item number "+this.dataList.length);
       }
       event.target.complete();
- 
+
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
       if (this.dataList.length == 1000) {
@@ -42,7 +39,7 @@ export class FeedsPage implements OnInit {
       }
     }, 500);
   }
- 
+
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }

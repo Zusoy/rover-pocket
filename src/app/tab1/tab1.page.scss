@@ -36,8 +36,6 @@
   margin:200px auto;
   top:0px;bottom:0px;left:0px;right:0px;
 
-
-
   background: linear-gradient(180deg, #F27A5E 0%, #BF4539 100%);
 }
 
@@ -98,4 +96,8 @@
   top: 18%;
   margin: auto;
   width: 100%;
+}
+
+.menu {
+  --width: 500px;
 }
