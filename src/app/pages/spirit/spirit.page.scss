@@ -54,9 +54,9 @@
 
 .carre-blanc
     {
-        width:400px;
-        height:200px;
-        margin: 20px auto;
+        width:600px;
+        height:300px;
+        margin: 50px auto;
         background:white;
     }
 
@@ -69,7 +69,17 @@ ion-menu-button {
   color: white;
 }
 
+<<<<<<< Updated upstream
 .header-md::after{
   background-image: none;
   display: none;
 }
+=======
+.photo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+
+}
+>>>>>>> Stashed changes
