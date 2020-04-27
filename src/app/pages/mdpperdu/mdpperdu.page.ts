@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth"; 
 import * as firebase from "firebase"; 
 import { ToastController } from '@ionic/angular';
+import {  MenuController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-mdpperdu',
@@ -17,6 +19,8 @@ export class MdpperduPage implements OnInit {
     constructor(
         private afAuth: AngularFireAuth,
         public toastController: ToastController,
+        public menuCtrl: MenuController
+
     ) { }
 
   ngOnInit() {
@@ -77,4 +81,7 @@ export class MdpperduPage implements OnInit {
         }
     }
 
+    ionViewWillEnter() {
+      this.menuCtrl.enable(false);
+     }
 }
