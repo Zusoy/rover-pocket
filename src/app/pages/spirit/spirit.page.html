@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-menu-button slot="start"></ion-menu-button>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +13,12 @@
       <path d="M67.3333 77.1667L67.3333 60.5L14.7083 27.625L34 16.75L67.3333 35.5L67.3333 18.8333L34 0.083342L0.666682 18.8333L0.666682 35.5L53.2917 68.375L34 79.25L0.666681 60.5L0.66668 77.1667L34 95.9167L67.3333 77.1667Z" fill="#6E372A"/>
       </svg>
 
-  <ion-list id="lol" color="tertiary">
+  <ion-list id="list" color="tertiary">
     <ion-item *ngFor="let item of dataList">
       <div class="carre-blanc">
         <img class="photo" src="../../assets/rover/photo.png" alt="image">
+        <p class="infos">Sol X : Nom du rover</p>
+        <ion-icon name="star-outline"></ion-icon>
       <!-- <ion-label>{{item}}</ion-label> -->
       </div>
     </ion-item>
