@@ -19,7 +19,6 @@ export class LoginPage {
 
 
   providerFb: firebase.auth.FacebookAuthProvider;
- /* providerGg: firebase.auth.GoogleAuthProvider;*/
 
   dataUser = {
       email: '',
@@ -37,12 +36,10 @@ export class LoginPage {
     public toastController: ToastController,
     public afAuth: AngularFireAuth,
     private fb: Facebook,
-    /*private googlePlus: GooglePlus,*/
     public platform: Platform,
     public menuCtrl: MenuController
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
-    /*this.providerGg = new firebase.auth.GoogleAuthProvider();*/
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -156,39 +153,6 @@ export class LoginPage {
       });
   }
 
-/* --- --- CONNECTION GOOGLE --- --- */
-
-googleLogin() {
-    /*if (this.platform.is('cordova')) {
-        console.log('PLateforme cordova');
-        this.googleCordova();
-      } else {
-        console.log('PLateforme Web');
-        this.googleWeb();
-      }*/
-  }
-
-  googleCordova() {
-   /*this.googlePlus
-   .login({}).then(res => console.log(res))
-   .then((success) => {
-              console.log('Info Google: ' + JSON.stringify(success));
-              this.navCtrl.navigateRoot('spirit');
-          }).catch((error) => {
-              console.log('Erreur: ' + JSON.stringify(error));
-          });*/
-}
-
-  googleWeb() {
-     /* this.afAuth.auth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((success) => {
-        console.log('Info Google: ' + JSON.stringify(success));
-        this.navCtrl.navigateRoot('spirit');
-      }).catch((error) => {
-        console.log('Erreur: ' + JSON.stringify(error));
-      });*/
-  }
 
 /* --- --- DECONNECTION --- --- */
 
