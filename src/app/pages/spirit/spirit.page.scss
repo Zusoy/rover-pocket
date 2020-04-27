@@ -76,17 +76,36 @@ ion-menu-button {
 
 .photo
     {
-        margin: 12px 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 7px;
+      width: 95%;
+      height: 77%;
     }
 
-.infos
-{
+.infos{
   color:orangered;
-  margin:-11px 0 10px 10px;
+  float: left;
+  margin-left: 12px;
+  margin-top: 2px;
 }
 
-ion-icon
-{
-  margin:-8px 0 10px 10px;
-  font-size: 25px;
+ion-icon{
+  font-size: 30px;
+  margin-left: 10px;
+  margin-top:10px;
+  
+}
+
+.left-icons{
+  float: left;
+  clear: both;
+  margin-top:-22px;
+}
+
+.right-icons{
+  text-align: right;
+  margin-right: 12px;
+  margin-top: 10px;
 }
