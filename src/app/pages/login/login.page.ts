@@ -4,10 +4,9 @@ import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
-import { GooglePlus } from '@ionic-native/google-plus';
 import { Platform } from '@ionic/angular';
 import {  MenuController } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -19,9 +18,8 @@ import {  MenuController } from '@ionic/angular';
 export class LoginPage {
 
 
-
   providerFb: firebase.auth.FacebookAuthProvider;
-  providerGg: firebase.auth.GoogleAuthProvider;
+ /* providerGg: firebase.auth.GoogleAuthProvider;*/
 
   dataUser = {
       email: '',
@@ -34,6 +32,7 @@ export class LoginPage {
   method: any;
 
   constructor(
+    private navCtrl: NavController,
     public afDB: AngularFireDatabase,
     public toastController: ToastController,
     public afAuth: AngularFireAuth,
@@ -43,7 +42,7 @@ export class LoginPage {
     public menuCtrl: MenuController
   ) {
     this.providerFb = new firebase.auth.FacebookAuthProvider();
-    this.providerGg = new firebase.auth.GoogleAuthProvider();
+    /*this.providerGg = new firebase.auth.GoogleAuthProvider();*/
 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -80,6 +79,7 @@ export class LoginPage {
         email: '',
         password: ''
       };
+      this.navCtrl.navigateRoot('spirit');
     }).catch(err => {
       this.loginError();
       console.log('Erreur: ' + err);
@@ -91,7 +91,7 @@ export class LoginPage {
     const toast = await this.toastController.create({
       message: 'Adresse email ou mot de passe incorrect.',
       position: 'top',
-      duration: 2000
+      duration: 1500
     });
     toast.present();
   }
@@ -100,7 +100,7 @@ export class LoginPage {
     const toast = await this.toastController.create({
       message: 'Vous &ecirc;tes maintenant connect&eacute;.',
       position: 'top',
-      duration: 2000
+      duration: 1500
     });
     toast.present();
   }
@@ -110,6 +110,7 @@ export class LoginPage {
   this.afAuth.auth.signInAnonymously().then(() => {
       console.log('Connexion r&eacute;ussie');
       this.loginSuccess();
+      this.navCtrl.navigateRoot('spirit');
     }).catch(err => {
       this.loginError();
       console.log('Erreur: ' + err);
@@ -137,6 +138,7 @@ export class LoginPage {
           firebase.auth().signInWithCredential(facebookCredential)
           .then((success) => {
               console.log('Info Facebook: ' + JSON.stringify(success));
+              this.navCtrl.navigateRoot('spirit');
           }).catch((error) => {
               console.log('Erreur: ' + JSON.stringify(error));
           });
@@ -148,6 +150,7 @@ export class LoginPage {
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then((success) => {
         console.log('Info Facebook: ' + JSON.stringify(success));
+        this.navCtrl.navigateRoot('spirit');
       }).catch((error) => {
         console.log('Erreur: ' + JSON.stringify(error));
       });
@@ -156,13 +159,13 @@ export class LoginPage {
 /* --- --- CONNECTION GOOGLE --- --- */
 
 googleLogin() {
-    if (this.platform.is('cordova')) {
+    /*if (this.platform.is('cordova')) {
         console.log('PLateforme cordova');
         this.googleCordova();
       } else {
         console.log('PLateforme Web');
         this.googleWeb();
-      }
+      }*/
   }
 
   googleCordova() {
@@ -170,19 +173,21 @@ googleLogin() {
    .login({}).then(res => console.log(res))
    .then((success) => {
               console.log('Info Google: ' + JSON.stringify(success));
+              this.navCtrl.navigateRoot('spirit');
           }).catch((error) => {
               console.log('Erreur: ' + JSON.stringify(error));
           });*/
-      }
+}
 
   googleWeb() {
-      this.afAuth.auth
+     /* this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((success) => {
         console.log('Info Google: ' + JSON.stringify(success));
+        this.navCtrl.navigateRoot('spirit');
       }).catch((error) => {
         console.log('Erreur: ' + JSON.stringify(error));
-      });
+      });*/
   }
 
 /* --- --- DECONNECTION --- --- */
