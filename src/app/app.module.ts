@@ -18,17 +18,18 @@ import { UserManagementComponent } from './components/user-management/user-manag
 
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCJaKO8d4pkleshE5R2AWPi53eZ0DPGt3M",
-  authDomain: "coincoininsolite-1cf37.firebaseapp.com",
-  databaseURL: "https://coincoininsolite-1cf37.firebaseio.com",
-  projectId: "coincoininsolite-1cf37",
-  storageBucket: "coincoininsolite-1cf37.appspot.com",
-  messagingSenderId: "322401191780",
-  appId: "1:322401191780:web:770faefa92d466cf939c71",
-  measurementId: "G-MXPY7WTVKH"
+    apiKey: 'AIzaSyCJaKO8d4pkleshE5R2AWPi53eZ0DPGt3M',
+    authDomain: 'coincoininsolite-1cf37.firebaseapp.com',
+    databaseURL: 'https://coincoininsolite-1cf37.firebaseio.com',
+    projectId: 'coincoininsolite-1cf37',
+    storageBucket: 'coincoininsolite-1cf37.appspot.com',
+    messagingSenderId: '322401191780',
+    appId: '1:322401191780:web:770faefa92d466cf939c71',
+    measurementId: 'G-MXPY7WTVKH'
 };
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
      AngularFireAuthModule,
      AngularFireStorageModule],
   providers: [
+    /*GooglePlus,*/
     Facebook,
     StatusBar,
     SplashScreen,
