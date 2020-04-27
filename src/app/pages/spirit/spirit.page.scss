@@ -47,16 +47,16 @@
  
 }
 
-#lol{
+#list{
 
     --ion-background-color:linear-gradient(180deg,  #ED765B 0%, #ED765B 100%);;
 }
 
 .carre-blanc
     {
-        width:400px;
-        height:200px;
-        margin: 20px auto;
+        width:600px;
+        height:270px;
+        margin: 50px auto;
         background:white;
     }
 
@@ -72,4 +72,21 @@ ion-menu-button {
 .header-md::after{
   background-image: none;
   display: none;
+}
+
+.photo
+    {
+        margin: 12px 10px;
+    }
+
+.infos
+{
+  color:orangered;
+  margin:-11px 0 10px 10px;
+}
+
+ion-icon
+{
+  margin:-8px 0 10px 10px;
+  font-size: 25px;
 }
