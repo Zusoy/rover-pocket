@@ -1,13 +1,6 @@
 import {Injectable} from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-/**
-* NASA API Service
-* 
-* @since    0.0.1
-* @category Service
-* @author   Zusoy
-*/
 @Injectable({
     providedIn: 'root'
 })
@@ -19,9 +12,9 @@ export class NasaAPI
     * @param url
     * @param method
     */
-    public async request(url: string, method: string = 'GET')
+    public async request(url: string, count: number, method: string = 'GET')
     {
-        let apiURL = this.makeNasaApiURL(url);
+        let apiURL = this.makeNasaApiURL(url, count);
         let options = {
             method: method,
             headers: {
@@ -42,13 +35,13 @@ export class NasaAPI
     * Make NASA API URL
     * @param url
     */
-    public makeNasaApiURL(url: string): string
+    public makeNasaApiURL(url: string, count: number): string
     {
         let apiUrl = environment.nasa.baseUrl + url;
         let querySeparator = (apiUrl.indexOf('?') != -1)
         ? '&'
         : '?';
 
-        return (apiUrl + querySeparator + `api_key=${environment.nasa.apiKey}`);
+        return (apiUrl + querySeparator + `api_key=${environment.nasa.apiKey}&sol=900&page=${count}`);
     }
 }
