@@ -38,21 +38,18 @@
         </ion-item>
     </ion-list>
     
-  <h2>Entrer un pseudonyme</h2>
-  <ion-input placeholder="Nouveau pseudonyme"></ion-input>
-  <!--   <h2>Changer de Mot de passe</h2>
-  <ion-input type="password" placeholder="Mot de passe actuel"></ion-input>
+  <h2>Changer de pseudonyme</h2>
+  <ion-input type="text" placeholder="Nouveau Pseudonyme" [(ngModel)]="dataUser.pseudo"></ion-input>
   <br>
-  <ion-input type="password" placeholder="Nouveau Mot de passe"></ion-input> -->
-    <ng-container *ngIf="actionCodeChecked" [ngSwitch]="mode"> <!-- Reset Password --> 
-        <ng-container *ngSwitchCase="'resetPassword'"> 
-            <ion-input [(ngModel)]="oldPassword" type="text" id="oldPassword" name="oldPassword" placeholder="Old Password"></ion-input> <br> 
-            <ion-input [(ngModel)]="newPassword" type="text" id="newPassword" name="newPassword" placeholder="New Password"></ion-input> <br> 
-            <ion-input [(ngModel)]="confirmPassword" type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"></ion-input> 
-            <button (click)="handleResetPassword()">Confirm</button> 
-        </ng-container> 
-    </ng-container> 
+  <ion-button color="success" expand="block" shape="round" fill="outline" (click)="resetPseudo()">Enregistrer nouveau pseudo</ion-button>
 
+    <h2>Changer de Mot de passe</h2>
+  <!--<ion-input type="password"  placeholder="Mot de passe actuel" [(ngModel)]="dataUser.oldPassword"></ion-input>-->
+  <br>
+  <ion-input type="password" placeholder="Nouveau Mot de passe" [(ngModel)]="dataUser.newPassword"></ion-input>
+  <br>
+  <ion-button color="success" expand="block" shape="round" fill="outline" (click)="resetPassword()">Enregistrer les modifications</ion-button>
+    
   <h2>S&eacute;lectionner un profil</h2>
   
   <ion-list class="list-avatar">
