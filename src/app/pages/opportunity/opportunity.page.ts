@@ -14,8 +14,7 @@ export class OpportunityPage implements OnInit {
 
   private rovers;
   private count = 1;
-  data: any[];
-  all_data: [];
+  data: any[] = [];
 
 	/**
 	 * RoversPage Constructor
@@ -58,7 +57,7 @@ export class OpportunityPage implements OnInit {
   getRoverData(rover: Rover, count: number) {
     let roveri = this.roverapi.getRoverLastPhotos(rover, count)
     roveri.then(rovers => {
-    this.data = rovers;
+      this.data = [...this.data, ...rovers];
     });
     this.count = this.count + 1;
   }
