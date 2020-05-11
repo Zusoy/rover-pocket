@@ -24,11 +24,11 @@
       <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.confirmPassword"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <div>
+    <ion-item color="light">
+      <div color="light">
         <ion-checkbox  color="light" [(ngModel)]="dataUser.cgu"></ion-checkbox>
       </div>
-      <ion-tab-button  color="medium" tab="cgu">J'accepte les Conditions Générales d'Utilisation</ion-tab-button>
+      <ion-tab-button  color="light" [routerLink]="['../a-propos']">J'accepte les Conditions Générales d'Utilisation</ion-tab-button>
     </ion-item>
     <br>
     <ion-button color="tertiary" expand="block" shape="round" (click)="signUp()">Valider Inscription</ion-button>
