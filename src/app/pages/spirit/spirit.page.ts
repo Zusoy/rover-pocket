@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { IonInfiniteScroll, LoadingController } from '@ionic/angular';
 import { MarsService } from 'src/app/services/MarsService';
 import { Rover } from 'src/app/models/Rover';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-spirit',
@@ -30,7 +31,8 @@ export class SpiritPage  implements OnInit {
 	constructor(
 		private mars: MarsService,
 		private loadingController: LoadingController,
-	  private roverapi: MarsService) {
+    private roverapi: MarsService,
+    private router: Router) {
 
   }
 
@@ -64,5 +66,17 @@ export class SpiritPage  implements OnInit {
       this.data = [...this.data, ...rovers];
     });
     this.count = this.count + 1;
+  }
+
+  redirectToCuriosity(){
+    this.router.navigate(['curiosity']);
+  }
+
+  redirectToSpirit(){
+    this.router.navigate(['spirit']);
+  }
+
+  redirectToOpportunity(){
+    this.router.navigate(['opportunity']);
   }
 }

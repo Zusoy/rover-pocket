@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MarsService } from 'src/app/services/MarsService';
 import { LoadingController, IonInfiniteScroll } from '@ionic/angular';
 import { Rover } from 'src/app/models/Rover';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-curiosity',
@@ -25,7 +26,8 @@ export class CuriosityPage implements OnInit {
 	constructor(
 		private mars: MarsService,
 		private loadingController: LoadingController,
-	  private roverapi: MarsService) {
+    private roverapi: MarsService,
+    private router: Router) {
 
   }
 
@@ -60,4 +62,17 @@ export class CuriosityPage implements OnInit {
     });
     this.count = this.count + 1;
   }
+
+  redirectToCuriosity(){
+    this.router.navigate(['curiosity']);
+  }
+
+  redirectToSpirit(){
+    this.router.navigate(['spirit']);
+  }
+
+  redirectToOpportunity(){
+    this.router.navigate(['opportunity']);
+  }
+
 }
