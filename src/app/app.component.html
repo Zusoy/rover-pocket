@@ -1,4 +1,3 @@
-
 <ion-app>
     <ion-menu side="start" menuId="first" contentId="content" type="push">
         <ion-header>
@@ -7,23 +6,21 @@
             </ion-toolbar>
         </ion-header>
         <ion-content>
-            <ion-list >
+            <ion-list>
                 <ion-menu-toggle auto-hide="true">
                     <ion-item menuClose [routerLink]="['../spirit']">
                         <img class="imagesMenu spirit" src="../assets/rover/spirit.svg" slot="start" alt="imgspirit">
                         <ion-label class="labelMenu">Spirit</ion-label>
                     </ion-item>
                     <ion-item [routerLink]="['../curiosity']">
-                        <img class="imagesMenu curiosity" src="../assets/rover/curiosity.svg" slot="start" alt="imgcuriosity">
+                        <img class="imagesMenu curiosity" src="../assets/rover/curiosity.svg" slot="start"
+                            alt="imgcuriosity">
                         <ion-label class="labelMenu">Curiosity</ion-label>
                     </ion-item>
                     <ion-item [routerLink]="['../opportunity']">
-                        <img class="imagesMenu opportunity" src="../assets/rover/opportunity.svg" slot="start" alt="imgopportunity">
+                        <img class="imagesMenu opportunity" src="../assets/rover/opportunity.svg" slot="start"
+                            alt="imgopportunity">
                         <ion-label class="labelMenu">Opportunity</ion-label>
-                    </ion-item>
-                    <ion-item [routerLink]="['../favoris']">
-                        <ion-icon name="heart-outline" slot="start"></ion-icon>
-                        <ion-label>Favoris</ion-label>
                     </ion-item>
                     <ion-item [routerLink]="['../settings']">
                         <ion-icon name="settings" slot="start"></ion-icon>

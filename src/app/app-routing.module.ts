@@ -40,10 +40,10 @@ const routes: Routes = [
     path: 'curiosity',
     loadChildren: () => import('./pages/curiosity/curiosity.module').then( m => m.CuriosityPageModule)
   },
-  {
-    path: 'favoris',
-    loadChildren: () => import('./pages/favoris/favoris.module').then( m => m.FavorisPageModule)
-  },
+  // {
+  //   path: 'favoris',
+  //   loadChildren: () => import('./pages/favoris/favoris.module').then( m => m.FavorisPageModule)
+  // },
   { 
     path: 'userMgmt', component: UserManagementComponent 
   }
