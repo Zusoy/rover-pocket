@@ -6,38 +6,36 @@
 </ion-header>
 
 <ion-content class="fond-content">
-<img class="etoiles" src="../../assets/etoiles.svg" alt="image">
-<div class="container">
-  <img class="mars" src="../../assets/rover/mars.png" alt="image">
+  <img class="etoiles" src="../../assets/etoiles.svg" alt="image">
+  <div class="container">
+    <img class="mars" src="../../assets/rover/mars.png" alt="image">
     <svg class="spirit" width="68" height="96" viewBox="0 0 68 96" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M67.3333 77.1667L67.3333 60.5L14.7083 27.625L34 16.75L67.3333 35.5L67.3333 18.8333L34 0.083342L0.666682 18.8333L0.666682 35.5L53.2917 68.375L34 79.25L0.666681 60.5L0.66668 77.1667L34 95.9167L67.3333 77.1667Z" fill="#6E372A"/>
-      </svg>
-
-  <ion-list id="list" color="tertiary">
-    <ion-item *ngFor="let item of dataList">
-      <div class="carre-blanc">
-        <img class="photo" src="../../assets/rover/photo.png" alt="image">
-        <p class="infos">Sol X : Nom du rover</p>
-        <div class="icons">
-        <div class="left-icons">
-        <ion-icon name="heart-outline"></ion-icon>
-        <ion-icon name="chatbox-outline"></ion-icon>
+    </svg>
+    <ion-list id="list" color="tertiary">
+      <ion-item *ngFor="let items of data">
+        <div class="carre-blanc">
+          <img class="photo" src="{{items.src}}" alt="image">
+          <p class="infos">rover id : {{items.id}}</p>
+          <div class="icons">
+            <div class="left-icons">
+              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon name="chatbox-outline"></ion-icon>
+            </div>
+            <div class="right-icons">
+              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="share-social-outline"></ion-icon>
+            </div>
+          </div>
         </div>
-        <div class="right-icons">
-        <ion-icon name="star-outline"></ion-icon>
-        <ion-icon name="share-social-outline"></ion-icon>
-       </div> 
-       </div> 
-      <!-- <ion-label>{{item}}</ion-label> -->
-      </div>
-    </ion-item>
-  </ion-list>
-</div> 
+      </ion-item>
+    </ion-list>
+  </div>
   <ion-infinite-scroll  threshold="1000px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content 
-      loadingSpinner="bubbles"
-      loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
 </ion-content>
 

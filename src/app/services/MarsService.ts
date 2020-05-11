@@ -25,14 +25,11 @@ export class MarsService
      * Get Rover last photos
      * @param rover
      */
-    public async getRoverLastPhotos(rover: Rover)
+    public async getRoverLastPhotos(rover: Rover, count: number)
     {
-        let response = await this.api.request(
-            `rovers/${rover.getName().toLowerCase()}/latest_photos`
-        );
+        let response = await this.api.request(`rovers/${rover.getName().toLowerCase()}/photos`, count);
         let latestPhotos = [];
-
-        response.latest_photos.map(photoJson => {
+        response.photos.map(photoJson => {
             let photo = new Photo();
             photo.setId(photoJson.id);
             photo.setSol(photoJson.sol);
@@ -43,19 +40,14 @@ export class MarsService
 
             latestPhotos.push(photo);
         });
-
         return latestPhotos;
     }
 
-
-    /**
-     * Get Mars Rovers
-     */
-    public async getRovers()
+    public async getRovers(count: number): Promise<any>
     {
         let rovers = [];
 
-        let response = await this.api.request('rovers/');
+        let response = await this.api.request('rovers/', count);
 
         response.rovers.map(roverJson => {
             let rover = new Rover();
@@ -80,17 +72,5 @@ export class MarsService
         });
 
         return rovers;
-    }
-
-
-    /**
-     * Get Rover by ID
-     * @param id
-     */
-    public async getRoverById(id: number)
-    {
-        let rovers: Rover[] = await this.getRovers();
-
-        return rovers.find(currentRover => currentRover.getId() === id);
     }
 }
