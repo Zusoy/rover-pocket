@@ -110,3 +110,28 @@ ion-icon{
   margin-right: 12px;
   margin-top: 10px;
 }
+
+.left-button{
+
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: 10px 0 10px 0;
+  opacity: 0;
+}
+
+.right-button{
+
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10px 0 10px 0;
+  opacity: 0;
+
+}

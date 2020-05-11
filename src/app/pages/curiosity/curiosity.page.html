@@ -8,7 +8,9 @@
 <img class="etoiles" src="../../assets/etoiles.svg" alt="image">
 <div class="container">
   <img class="mars" src="../../assets/rover/mars.png" alt="image">
-   <img class="spirit" src="../../assets/rover/curiosity.svg" alt="image"   height="100"  fill="none">
+   <img class="spirit" src="../../assets/rover/curiosity.svg" alt="image"  width="68" height="96" viewBox="0 0 68 96" fill="none">
+  <ion-button class="left-button" (click)="redirectToOpportunity()">Opportunity</ion-button>
+  <ion-button class="right-button" (click)="redirectToSpirit()">Spirit</ion-button>
   <ion-list id="list" color="tertiary">
     <ion-item *ngFor="let items of data">
       <div class="carre-blanc">
