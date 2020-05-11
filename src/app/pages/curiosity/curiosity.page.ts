@@ -31,7 +31,7 @@ export class CuriosityPage implements OnInit {
 
  ngOnInit(){
   this.rovers = this.roverapi.getRovers(this.count);
-  this.rovers.then(spirit =>this.getRoverData( spirit[1], this.count));
+  this.rovers.then(curiosity =>this.getRoverData( curiosity[0], this.count));
  }
 
 
@@ -39,7 +39,7 @@ export class CuriosityPage implements OnInit {
 
     setTimeout(() => {
       this.rovers = this.roverapi.getRovers(this.count);
-      this.rovers.then(spirit =>this.getRoverData( spirit[1], this.count));
+      this.rovers.then(curiosity =>this.getRoverData( curiosity[0], this.count));
       event.target.complete();
       // App logic to determine if all data is loaded
       // and disable the infinite scroll

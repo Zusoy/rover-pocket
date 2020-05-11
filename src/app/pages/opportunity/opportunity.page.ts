@@ -32,7 +32,7 @@ export class OpportunityPage implements OnInit {
 
  ngOnInit(){
   this.rovers = this.roverapi.getRovers(this.count);
-  this.rovers.then(spirit =>this.getRoverData( spirit[1], this.count));
+  this.rovers.then(opportunity =>this.getRoverData( opportunity[2], this.count));
  }
 
 
@@ -40,7 +40,7 @@ export class OpportunityPage implements OnInit {
 
     setTimeout(() => {
       this.rovers = this.roverapi.getRovers(this.count);
-      this.rovers.then(spirit =>this.getRoverData( spirit[1], this.count));
+      this.rovers.then(opportunity =>this.getRoverData( opportunity[2], this.count));
       event.target.complete();
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
