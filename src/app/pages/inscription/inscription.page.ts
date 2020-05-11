@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
-import {  MenuController } from '@ionic/angular';
-
+import * as firebase from 'firebase/app';
+import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-inscription',
+  selector: 'app-register',
   templateUrl: './inscription.page.html',
   styleUrls: ['./inscription.page.scss'],
 })
@@ -14,26 +14,29 @@ export class InscriptionPage implements OnInit {
 
 dataUser = {
       email: '',
-      password: ''
+      password: '',
+      cgu: false,
+      pseudo: '',
+      confirmPassword: ''
     };
   connected: boolean;
   userId: string;
   mail: string;
   method: any;
+  
 
   constructor(
+    private navCtrl: NavController,
     public afDB: AngularFireDatabase,
     public toastController: ToastController,
-    public afAuth: AngularFireAuth,
-    public menuCtrl: MenuController
-
+    public afAuth: AngularFireAuth
   ) {
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connect�');
+        console.log('non connecté');
         this.connected = false;
       } else {
-        console.log('connect�: ' + auth.uid);
+        console.log('connecté: ' + auth.uid);
         this.connected = true;
         this.userId = auth.uid;
         this.mail = auth.email;
@@ -46,19 +49,29 @@ dataUser = {
   }
 
 signUp() {
-    this.afAuth.auth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password)
-    .then(() => {
-      console.log('Connexion r�ussie');
-      this.dataUser = {
-        email: '',
-        password: ''
-      };
-      this.loginSuccess();
-    }).catch(err => {
-      this.loginError();
-      console.log('Erreur: ' + err);
-    });
-  }
+if (this.dataUser.cgu === true && this.dataUser.password === this.dataUser.confirmPassword) {
+    if (this.dataUser.email !== null && this.dataUser.password !== null && this.dataUser.pseudo !== null) {
+      this.afAuth.auth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password)
+          .then(() => {
+            console.log('Connexion réussie');
+
+            this.afAuth.authState.subscribe(auth => {
+        const postData = {
+          pseudo: this.dataUser.pseudo,
+        };
+        const updates = {};
+        updates['/Users/' + auth.uid ] = postData;
+        return firebase.database().ref().update(updates);
+});
+            this.loginSuccess();
+            this.navCtrl.navigateRoot('spirit');
+          }).catch(err => {
+        this.loginError();
+        console.log('Erreur: ' + err);
+      });
+    }
+  } else {this.CGUError(); }
+}
 async loginError() {
     const toast = await this.toastController.create({
       message: 'Adresse email ou mot de passe incorrect.',
@@ -70,13 +83,19 @@ async loginError() {
 
   async loginSuccess() {
     const toast = await this.toastController.create({
-      message: 'Vous �tes maintenant inscrit.',
+      message: 'Vous êtes maintenant inscrit.',
       position: 'top',
       duration: 2000
     });
     toast.present();
   }
-  ionViewWillEnter() {
-    this.menuCtrl.enable(false);
-   }
+
+  async CGUError() {
+    const toast = await this.toastController.create({
+      message: 'Vous devez accepter les CGU pour pouvoir continuer.',
+      position: 'top',
+      duration: 2000
+    });
+    toast.present();
+  }
 }
