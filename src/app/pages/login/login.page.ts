@@ -110,7 +110,7 @@ export class LoginPage {
   this.afAuth.auth.signInAnonymously().then(() => {
       console.log('Connexion r&eacute;ussie');
       this.loginSuccess();
-      this.navCtrl.navigateRoot('spirit');
+      this.navCtrl.navigateRoot('opportunity');
     }).catch(err => {
       this.loginError();
       console.log('Erreur: ' + err);
@@ -196,8 +196,8 @@ googleLogin() {
     this.afAuth.auth.signOut();
   }
 
-  ionViewWillEnter() {
-    this.menuCtrl.enable(false);
-   }
+  // ionViewWillEnter() {
+  //   this.menuCtrl.enable(false);
+  //  }
 }
 
