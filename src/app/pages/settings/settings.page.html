@@ -12,7 +12,7 @@
         </ion-title>
       </ion-toolbar>
        <div class="padding">
-   <!--
+   
         Notifications
     <ion-list>
         <ion-item>
@@ -38,7 +38,7 @@
             <ion-toggle></ion-toggle>
         </ion-item>
     </ion-list>
-  -->
+  
   <h2>Changer de pseudonyme</h2>
   <ion-input type="text" placeholder="Nouveau Pseudonyme" [(ngModel)]="dataUser.pseudo"></ion-input>
   <br>
@@ -50,7 +50,7 @@
   <ion-input type="password" placeholder="Nouveau Mot de passe" [(ngModel)]="dataUser.newPassword"></ion-input>
   <br>
   <ion-button color="success" expand="block" shape="round" fill="outline" (click)="resetPassword()">Enregistrer les modifications</ion-button>
-    <!--
+    
   <h2>S&eacute;lectionner un profil</h2>
   
   <ion-list class="list-avatar">
@@ -83,19 +83,14 @@
       </ion-list>
 
 
-  <h2>S&eacute;lectionner une langue</h2>
-  <ion-list class="list-drapeau">
-    <img class="drapeau" src="../../assets/drapeau/francais.png" alt="image">
-    <img class="drapeau" src="../../assets/drapeau/anglais.png" alt="image">
-  </ion-list>
-  -->
+  
   <p>
     <ion-button color="dark" expand="block" id="cgu" tab="cgu" fill="clear" [routerLink]="['../a-propos']">
       Conditions g&eacute;n&eacute;rale d&apos;utilisation
     </ion-button>
   </p>
   <p id="suppr" >
-    <ion-button (click)="presentAlert()" color="danger" fill="outline" >Supprimer le compte</ion-button>
+    <ion-button (click)="deleteUser()" color="danger" fill="outline" >Supprimer le compte</ion-button>
   </p>
   </div>
 </ion-content>
