@@ -39,6 +39,11 @@ export class SpiritPage  implements OnInit {
   this.rovers.then(spirit =>this.getRoverData( spirit[1], this.count));
  }
 
+ colourLike()
+ {
+
+ }
+
 
   loadData(event) {
 
